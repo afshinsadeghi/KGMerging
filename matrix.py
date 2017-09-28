@@ -35,9 +35,13 @@ try:
 
     predicates1 = array1[:, [1]]
     predicates2 = array2[:, [1]]
-
+# next merging the two matrixes into one. and remove repeated predicates
+# put all predicates in one place to make them unique
+    unionPredicates= np.union1d(predicates1,predicates2)   # union itself make them unique
+#    uniquePredicates = np.unique(unionPredicates)
 
 except ValueError:
     print(lineInFile)
     print(lineInFile.rstrip('\n').strip(" .").split("> "))
     print counter
+
